@@ -1,0 +1,106 @@
+.skills {
+  padding: 5rem 3rem;
+  background: var(--surface);
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent1);
+  margin-bottom: 0.6rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  font-style: normal;
+  color: var(--accent2);
+}
+
+/* Category Label */
+.categoryLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent3);
+  margin: 2rem 0 1rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--accent3);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card:nth-child(4n + 1):hover {
+  border-color: var(--accent1);
+}
+.card:nth-child(4n + 2):hover {
+  border-color: var(--accent2);
+}
+.card:nth-child(4n + 3):hover {
+  border-color: var(--accent3);
+}
+.card:nth-child(4n + 4):hover {
+  border-color: var(--accent4);
+}
+
+.skillName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.barBg {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .skills {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}

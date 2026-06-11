@@ -1,0 +1,116 @@
+.about {
+  padding: 5rem 3rem;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent1);
+  margin-bottom: 0.6rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  font-style: normal;
+  color: var(--accent2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Bio */
+.bioTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.bioText {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.bioText strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.statCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.statCard:hover {
+  border-color: var(--accent3);
+  transform: translateY(-3px);
+}
+
+.statNum {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.c1 {
+  color: var(--accent1);
+}
+.c2 {
+  color: var(--accent2);
+}
+.c3 {
+  color: var(--accent3);
+}
+.c4 {
+  color: var(--accent4);
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .about {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

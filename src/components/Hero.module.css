@@ -1,0 +1,144 @@
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 80% 20%,
+      rgba(15, 18, 27, 0.15),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 40% 40% at 10% 70%,
+      rgba(255, 61, 87, 0.12),
+      transparent
+    );
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent3);
+  border: 1px solid var(--accent3);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
+.name {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.4rem;
+}
+
+.highlight {
+  display: block;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  background: linear-gradient(
+    135deg,
+    var(--accent1) 0%,
+    var(--accent2) 50%,
+    var(--accent3) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--muted);
+  margin: 1.2rem 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.btnPrimary {
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--accent1);
+  color: #fff;
+  transition: transform 0.15s;
+  font-family: var(--font-head);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  transition: transform 0.15s;
+  font-family: var(--font-head);
+}
+
+.btnOutline:hover {
+  transform: translateY(-2px);
+}
+
+.scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--accent3), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
