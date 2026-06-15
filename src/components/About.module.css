@@ -1,5 +1,6 @@
 .about {
   padding: 5rem 3rem;
+  background: var(--surface);
 }
 
 .sectionLabel {

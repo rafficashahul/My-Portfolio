@@ -62,7 +62,9 @@
   height: 2px;
   background: #f0eee8;
   border-radius: 2px;
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
 }
 
 /* Hamburger Animation */

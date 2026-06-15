@@ -29,59 +29,57 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div>
-      <section id="projects" className={styles.projects}>
-        <div className={styles.sectionLabel}>Projects</div>
-        <h2 className={styles.sectionTitle}>
-          Things I've <em className={styles.highlight}>built</em>
-        </h2>
+    <section id="projects" className={styles.projects}>
+      <div className={styles.sectionLabel}>Projects</div>
+      <h2 className={styles.sectionTitle}>
+        Things I've <em className={styles.highlight}>built</em>
+      </h2>
 
-        <div className={styles.grid}>
-          {projects.map((project, i) => (
-            <div key={i} className={styles.card}>
-              {/* Thumbnail */}
-              <div
-                className={styles.thumb}
-                style={{ backgroundImage: `url(${project.image})` }}
-              >
-                <div className={styles.thumbOverlay} />
+      <div className={styles.grid}>
+        {projects.map((project, i) => (
+          <div key={i} className={styles.card}>
+            {/* Thumbnail */}
+            <div
+              className={styles.thumb}
+              style={{ backgroundImage: `url(${project.image})` }}
+            >
+              <div className={styles.thumbOverlay} />
+            </div>
+
+            {/* Body */}
+            <div className={styles.body}>
+              <div className={styles.tags}>
+                {project.tags.map((tag, j) => (
+                  <span key={j} className={styles.tag}>
+                    {tag}
+                  </span>
+                ))}
               </div>
-
-              {/* Body */}
-              <div className={styles.body}>
-                <div className={styles.tags}>
-                  {project.tags.map((tag, j) => (
-                    <span key={j} className={styles.tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className={styles.name}>{project.name}</div>
-                <div className={styles.desc}>{project.desc}</div>
-                <div className={styles.links}>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.link}
-                  >
-                    → Live demo
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.link}
-                  >
-                    → GitHub
-                  </a>
-                </div>
+              <div className={styles.name}>{project.name}</div>
+              <div className={styles.desc}>{project.desc}</div>
+              <div className={styles.links}>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.link}
+                >
+                  → Live demo
+                </a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.link}
+                >
+                  → GitHub
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

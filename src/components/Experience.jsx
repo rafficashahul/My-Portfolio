@@ -29,33 +29,31 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div>
-      <section id="experience" className={styles.experience}>
-        <div className={styles.sectionLabel}>Experience</div>
-        <h2 className={styles.sectionTitle}>
-          Where I've <em className={styles.highlight}>worked</em>
-        </h2>
+    <section id="experience" className={styles.experience}>
+      <div className={styles.sectionLabel}>Experience</div>
+      <h2 className={styles.sectionTitle}>
+        Where I've <em className={styles.highlight}>worked</em>
+      </h2>
 
-        <div className={styles.timeline}>
-          {experiences.map((exp, i) => (
-            <div key={i} className={styles.item}>
-              {/* Date */}
-              <div className={styles.date}>{exp.date}</div>
+      <div className={styles.timeline}>
+        {experiences.map((exp, i) => (
+          <div key={i} className={styles.item}>
+            {/* Date */}
+            <div className={styles.date}>{exp.date}</div>
 
-              {/* Dot */}
-              <div className={styles.dot} />
+            {/* Dot */}
+            <div className={styles.dot} />
 
-              {/* Content */}
-              <div className={styles.content}>
-                <div className={styles.role}>{exp.role}</div>
-                <div className={styles.company}>{exp.company}</div>
-                <div className={styles.desc}>{exp.desc}</div>
-              </div>
+            {/* Content */}
+            <div className={styles.content}>
+              <div className={styles.role}>{exp.role}</div>
+              <div className={styles.company}>{exp.company}</div>
+              <div className={styles.desc}>{exp.desc}</div>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

@@ -1,75 +1,89 @@
-import styles from './Skills.module.css'
+import styles from "./Skills.module.css";
 
 const skills = {
-  programming: [
-    { name: 'HTML', pct: 90, color: '#FF3D57' },
-    { name: 'CSS', pct: 85, color: '#FFD84D' },
-    { name: 'JavaScript', pct: 80, color: '#FFD84D' },
-    { name: 'React', pct: 75, color: '#3DFFC0' },
-  ],
-  design: [
-    { name: 'Figma', pct: 78, color: '#5B8DFF' },
-  ],
-  tools: [
-    { name: 'Git', pct: 80, color: '#FF3D57' },
-    { name: 'GitHub', pct: 80, color: '#3DFFC0' },
-    { name: 'VS Code', pct: 90, color: '#5B8DFF' },
-    { name: 'Chrome DevTools', pct: 75, color: '#FFD84D' },
-  ],
-  database: [
-    { name: 'SQL', pct: 65, color: '#5B8DFF' },
-  ],
-  it: [
-    { name: 'Troubleshooting', pct: 80, color: '#3DFFC0' },
-    { name: 'Hardware', pct: 70, color: '#5B8DFF' },
-    { name: 'System Install', pct: 70, color: '#FFD84D' },
-  ],
-}
-
-const SkillGrid = ({ items }) => (
-  <div className={styles.grid}>
-    {items.map((skill, i) => (
-      <div key={i} className={styles.card}>
-        <div className={styles.skillName}>{skill.name}</div>
-        <div className={styles.barBg}>
-          <div
-            className={styles.barFill}
-            style={{ width: `${skill.pct}%`, background: skill.color }}
-          />
-        </div>
-      </div>
-    ))}
-  </div>
-)
+  programming: ["HTML5", "CSS3", "JavaScript", "React"],
+  design: ["Figma", "UI/UX Design", "Responsive Design"],
+  tools: ["Git", "GitHub", "VS Code", "Chrome DevTools"],
+  database: ["SQL"],
+  it: ["Troubleshooting", "Hardware Maintenance", "System Installation"],
+};
 
 const Skills = () => {
   return (
-    <div>
-      <section id="skills" className={styles.skills}>
+    <section id="skills" className={styles.skills}>
+      <div className={styles.sectionLabel}>Skills</div>
+      <h2 className={styles.sectionTitle}>
+        My <em className={styles.highlight}>toolkit</em>
+      </h2>
 
-        <div className={styles.sectionLabel}>Skills</div>
-        <h2 className={styles.sectionTitle}>
-          My <em className={styles.highlight}>toolkit</em>
-        </h2>
+      <div className={styles.grid}>
+        {/* Skills List */}
+        <div className={styles.skillsContainer}>
+          {Object.entries(skills).map(([category, items]) => (
+            <div key={category} className={styles.category}>
+              <div className={styles.categoryLabel}>{category}</div>
+              <div className={styles.tagList}>
+                {items.map((skill, i) => (
+                  <span key={i} className={styles.tag}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
-        <div className={styles.categoryLabel}>Programming</div>
-        <SkillGrid items={skills.programming} />
+        {/* Quote / Reference */}
+        <div className={styles.reference}>
+          <div className={styles.quote}>
+            "Clean code that does exactly what the assignment asks for. Cool
+            that this API looks up the nearest correct city based on what you
+            type in the input."
+          </div>
+          <div className={styles.quoteAuthor}>— Code Review, Kodehode</div>
 
-        <div className={styles.categoryLabel}>Design</div>
-        <SkillGrid items={skills.design} />
+          {/* Quote 2 - Memory Game */}
+          <div className={styles.reference}>
+            <div className={styles.quote}>
+              "There are many good and tricky methods that have been used here
+              to solve different challenges. .dataset.match is very nice for
+              comparing the two values in pairs. Very well done assignment."
+            </div>
+            <div className={styles.quoteAuthor}>— Code Review, Kodehode</div>
+          </div>
 
-        <div className={styles.categoryLabel}>Tools</div>
-        <SkillGrid items={skills.tools} />
-
-        <div className={styles.categoryLabel}>Database</div>
-        <SkillGrid items={skills.database} />
-
-        <div className={styles.categoryLabel}>IT</div>
-        <SkillGrid items={skills.it} />
-
-      </section>
-    </div>
-  )
-}
-
-export default Skills
+          <div className={styles.projects}>
+            <div className={styles.projectsLabel}>See my skills in action:</div>
+            <div className={styles.projectLinks}>
+              <a
+                href="https://rafficashahul.github.io/emoji-memory-game/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.projectLink}
+              >
+                → Emoji Memory Game
+              </a>
+              <a
+                href="https://rafficashahul.github.io/Climate-Check/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.projectLink}
+              >
+                → Weather Checker
+              </a>
+              <a
+                href="https://rafficashahul.github.io/Craftvilla/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.projectLink}
+              >
+                → Craftsvilla
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+export default Skills;

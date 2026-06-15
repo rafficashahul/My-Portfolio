@@ -1,19 +1,18 @@
-import { useState } from 'react'
-import { Link } from 'react-scroll'
-import styles from './Header.module.css'
+import { useState } from "react";
+import { Link } from "react-scroll";
+import styles from "./Header.module.css";
 
-const navItems = ['about', 'skills', 'projects', 'experience', 'contact']
+const navItems = ["about", "skills", "projects", "experience", "contact"];
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-
         {/* Logo */}
         <div className={styles.logo}>Developer</div>
 
@@ -23,13 +22,13 @@ const Header = () => {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span className={`${styles.bar} ${isOpen ? styles.bar1Open : ''}`} />
-          <span className={`${styles.bar} ${isOpen ? styles.bar2Open : ''}`} />
-          <span className={`${styles.bar} ${isOpen ? styles.bar3Open : ''}`} />
+          <span className={`${styles.bar} ${isOpen ? styles.bar1Open : ""}`} />
+          <span className={`${styles.bar} ${isOpen ? styles.bar2Open : ""}`} />
+          <span className={`${styles.bar} ${isOpen ? styles.bar3Open : ""}`} />
         </button>
 
         {/* Menu */}
-        <ul className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
+        <ul className={`${styles.menu} ${isOpen ? styles.menuOpen : ""}`}>
           {navItems.map((item) => (
             <li key={item}>
               <Link
@@ -44,10 +43,9 @@ const Header = () => {
             </li>
           ))}
         </ul>
-
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
