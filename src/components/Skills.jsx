@@ -1,12 +1,12 @@
-import styles from './Skills.module.css'
+import styles from "./Skills.module.css";
 
 const skills = {
-  programming: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-  design: ['Figma', 'UI/UX Design', 'Responsive Design'],
-  tools: ['Git', 'GitHub', 'VS Code', 'Chrome DevTools'],
-  database: ['SQL'],
-  it: ['Troubleshooting', 'Hardware Maintenance', 'System Installation'],
-}
+  programming: ["HTML5", "CSS3", "JavaScript", "React"],
+  design: ["Figma", "UI/UX Design", "Responsive Design"],
+  tools: ["Git", "GitHub", "VS Code", "Chrome DevTools"],
+  database: ["SQL"],
+  it: ["Troubleshooting", "Hardware Maintenance", "System Installation"],
+};
 
 const Skills = () => {
   return (
@@ -17,7 +17,6 @@ const Skills = () => {
       </h2>
 
       <div className={styles.grid}>
-
         {/* Skills List */}
         <div className={styles.skillsContainer}>
           {Object.entries(skills).map(([category, items]) => (
@@ -36,7 +35,6 @@ const Skills = () => {
 
         {/* Right Side - Quotes & Links */}
         <div className={styles.reference}>
-
           {/* Quote 1 - Weather Checker */}
           <div className={styles.quoteCard}>
             <div className={styles.quote}>
@@ -63,28 +61,28 @@ const Skills = () => {
 
           {/* Project Links */}
           <div className={styles.projects}>
-            <div className={styles.projectsLabel}>
-              See my skills in action:
-            </div>
+            <div className={styles.projectsLabel}>See my skills in action:</div>
             <div className={styles.projectLinks}>
-              
-                <a href="https://rafficashahul.github.io/emoji-memory-game/"
+              <a
+                href="https://rafficashahul.github.io/emoji-memory-game/"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.projectLink}
               >
                 → Emoji Memory Game
               </a>
-              
-                <a href="https://rafficashahul.github.io/Climate-Check/"
+
+              <a
+                href="https://rafficashahul.github.io/Climate-Check/"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.projectLink}
               >
                 → Weather Checker
               </a>
-              
-                < a href="https://rafficashahul.github.io/Craftvilla/"
+
+              <a
+                href="https://rafficashahul.github.io/Craftvilla/"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.projectLink}
@@ -93,11 +91,10 @@ const Skills = () => {
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
